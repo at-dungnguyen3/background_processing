@@ -8,7 +8,8 @@ class ReportsController < ApplicationController
 
   def create
     generate_report
-    redirect_to reports_path
+    #ReportWorker.perform_async("03-11-2018")
+    render plain: "Request generate report success"
   end
 
   private
